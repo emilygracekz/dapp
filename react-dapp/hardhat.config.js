@@ -11,9 +11,6 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
   }
 })
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
-
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
@@ -25,6 +22,10 @@ module.exports = {
   networks: {
     hardhat: {
       chainId: 1337,
+    },
+    ropsten: {
+      url: 'https://ropsten.infura.io/v3/9b748acece4943d6bfdbeda8776bac81',
+      accounts: [`0x${process.env.ACCOUNT_KEY}`],
     },
   },
 }
